@@ -166,11 +166,13 @@ DoubleArray2D operator*(double alpha, const DoubleArray2D& D)
 
 DoubleArray1D DoubleArray2D::operator*(const DoubleArray1D& x)
 {
+    DoubleArray1D y(index1Size);
+    
     /*
-     
-     Please add your code here! 
-     
+     Please add your code here!
      */
+    
+    return y;
 }
     
 DoubleArray2D DoubleArray2D::operator/(double alpha)

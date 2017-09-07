@@ -23,7 +23,10 @@ int main()
     DoubleArray1D y(n);     // Declare y to be a vector of size n.
     y = A*x;                // Compute y = A*x using the member function you write.
     cout << A << "\n .* \n"<< x <<"\n =\n"<<y<<"\n\n"; // print to the console screen.
-     */
+    */
     
+#ifdef _WIN32
+    system("pause");
+#endif
     return 0;
 }
