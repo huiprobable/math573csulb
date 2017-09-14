@@ -167,10 +167,19 @@ DoubleArray2D operator*(double alpha, const DoubleArray2D& D)
 DoubleArray1D DoubleArray2D::operator*(const DoubleArray1D& x)
 {
     DoubleArray1D y(index1Size);
+    DoubleArray2D R(*this);
     
-    /*
-     Please add your code here!
-     */
+    int rows = (int) this->getIndex1Size();
+    int cols = (int) this->getIndex2Size();
+    
+    for(int ii=0; ii<rows; ii++)
+    {
+        y(ii) = 0;
+        for(int jj=0; jj<cols; jj++)
+        {
+            y(ii) += x(jj) * R(ii,jj);
+        }
+    }
     
     return y;
 }

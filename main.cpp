@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    /*
+    
     int n = 5;
     DoubleArray2D A(n, n);   // Declaring matrix A to be n by n.
     DoubleArray2D B(n, n);   // Declaring matrix B to be n by n.
@@ -23,7 +23,7 @@ int main()
     DoubleArray1D y(n);     // Declare y to be a vector of size n.
     y = A*x;                // Compute y = A*x using the member function you write.
     cout << A << "\n .* \n"<< x <<"\n =\n"<<y<<"\n\n"; // print to the console screen.
-    */
+    
     
 #ifdef _WIN32
     system("pause");
