@@ -108,6 +108,49 @@ const double& DoubleArray2D::operator()(long i1, long i2) const
 
 #endif
 
+
+DoubleArray1D  DoubleArray2D::row(long i)
+{
+  DoubleArray1D y(index2Size);
+  DoubleArray2D R(*this);
+  for (long j=0; j<index2Size; j++)
+    {
+      y(j) = R(i,j);
+    }
+
+  return y;
+}
+
+void DoubleArray2D::setrow(long i, const DoubleArray1D& x)
+{
+  for (long j=0; j<index2Size; j++)
+    {
+      dataPtr[j+i*index2Size] = x(j);
+    }
+
+}
+
+DoubleArray1D  DoubleArray2D::column(long j)
+{
+  DoubleArray1D y(index1Size);
+  DoubleArray2D R(*this);
+  for (long i=0; i<index1Size; i++)
+    {
+      y(i) = R(i,j);
+    }
+  
+  return y; 
+}
+
+void DoubleArray2D::setcolumn(long j, const DoubleArray1D& x)
+{
+  for (long i=0; i<index2Size; i++)
+    {
+      dataPtr[j+i*index2Size] = x(i);
+    }
+
+}
+
 //
 //###################################################################
 //                     Array Operators

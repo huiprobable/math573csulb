@@ -30,6 +30,11 @@ public :
 //
     double&  operator()(long i1, long i2);
     const double&  operator()(long i1, long i2) const;
+    DoubleArray1D row(long i);
+    void setrow(long i, const DoubleArray1D& x);
+    DoubleArray1D  column(long j);
+    void setcolumn(long j, const DoubleArray1D& x);
+
 
 //
 //###################################################################
