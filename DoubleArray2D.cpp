@@ -144,7 +144,7 @@ DoubleArray1D  DoubleArray2D::column(long j)
 
 void DoubleArray2D::setcolumn(long j, const DoubleArray1D& x)
 {
-  for (long i=0; i<index2Size; i++)
+  for (long i=0; i<index1Size; i++)
     {
       dataPtr[j+i*index2Size] = x(i);
     }
