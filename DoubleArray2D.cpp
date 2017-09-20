@@ -185,6 +185,28 @@ DoubleArray2D DoubleArray2D::operator-(const DoubleArray2D& D)
     return R;
 }
 
+DoubleArray2D DoubleArray2D::operator*(const DoubleArray2D& D)
+{
+        #ifdef _DEBUG
+    assert(this->index2Size==D.index1Size);
+        #endif
+    DoubleArray2D R(this->index1Size, D.index2Size);
+    DoubleArray2D A(*this);
+    long i, j, k;
+    for (i = 0; i < this->index1Size; i++)
+    {
+        for (j = 0; j < D.index2Size; j++)
+	{
+	    R(i,j) = 0.0;
+	    for (k = 0; k < this->index2Size; k++)
+	    {
+	        R(i,j) += A(i,k)*D(k,j); 
+	    }
+	}
+    }
+    return R;
+}
+
 DoubleArray2D DoubleArray2D::operator*(double alpha)
 {
     DoubleArray2D R(*this);

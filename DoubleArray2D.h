@@ -55,6 +55,7 @@ public :
     DoubleArray2D operator-(const DoubleArray2D& D);
     DoubleArray2D operator*(double alpha);
     DoubleArray1D operator*(const DoubleArray1D& x);
+    DoubleArray2D operator*(const DoubleArray2D& D);
     friend DoubleArray2D operator*(double alpha, const DoubleArray2D& D);
     DoubleArray2D operator/(double alpha);
     void operator=(const DoubleArray2D& D);

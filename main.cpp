@@ -43,11 +43,11 @@ int main()
 	  for (int k = 0; k < j; k++)
 	  {
 	    // Please add a line here:  q_hat -= ...
-	    // Please add a line here:  r(j,j) = ...
-	    if (r(j,j) == 0)
-	      break;
-	    // Please add a line here to set the j-th colume of q to be equal to q_hat/r_jj. 
 	  }
+	  // Please add a line here:  r(j,j) = ...
+	  if (r(j,j) == 0)
+	    break;
+	  // Please add a line here to set the j-th colume of q to be equal to q_hat/r_jj. 
 	}
     }
     cout<< "r=\n" << r<<"\n\n";
