@@ -76,6 +76,7 @@ public :
     void operator-=(const DoubleArray1D& D);
     void setToValue(double d);
     double dot(const DoubleArray1D& B) const;
+    double norm(double p) const;
 
 //
 //  Output

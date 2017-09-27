@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 using namespace std;
 
 #include "DoubleArray1D.h"
@@ -298,6 +299,17 @@ double DoubleArray1D::dot(const DoubleArray1D& B) const
         R += dataPtr[i]*B.dataPtr[i];
     }
     return R;
+}
+
+double DoubleArray1D::norm(double p) const
+{
+  double n=0;
+  for (int i = 0; i<index1Size; i++)
+    {
+      n += pow(dataPtr[i],p);
+    }
+  n = pow(n, 1.0/p);
+  return n;
 }
 
 //
