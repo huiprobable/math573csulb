@@ -17,10 +17,34 @@ int main()
     SparseMatrix A(n, n);   // construct A as an n by n sparse matrix.
     DoubleArray1D v(n);     // construct v as a DoubleArray1D of size n, this sets up for lab5.
     
+    // Here is Lab 4 code, create the matrix A. 
+    for (int i=0; i<n; i++)
+    {
+    	if (i==0)
+    	{
+    		A.addEntry(i,i,2.0);
+    		A.addEntry(i,i+1,-1.0);
+    	}
+    	else if (i==n-1)
+    	{
+    		A.addEntry(i,i,2.0);
+    		A.addEntry(i,i-1,-1.0);
+    	}
+    	else
+    	{
+    	A.addEntry(i,i,2.0);
+    	A.addEntry(i,i-1,-1.0);
+    	A.addEntry(i,i+1,-1.0);
+    	}
+    }
+    // This for loop sets the vector v as a random vector. 
+    for (int i = 0; i < n; i++)
+    {
+	v(i) = (rand()%1001)/1000.0-0.5;
+    }
     // Please insert your code starting from here.
-    
-    
-    
+
+
     // Please insert your code above this line
     
     return 0;
