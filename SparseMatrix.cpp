@@ -35,7 +35,10 @@ SparseMatrix::SparseMatrix(const SparseMatrix& D)
 
 SparseMatrix::~SparseMatrix()
 {
-    if( rows != NULL) delete [] rows;
+    if( rows != NULL)
+    {
+        delete [] rows;
+    }
 }
 
 void SparseMatrix::initialize(long m, long n)
@@ -138,8 +141,12 @@ void SparseMatrix::operator=(const SparseMatrix& D)
     {
         size1 = D.size1;
         size2 = D.size2;
-        if( rows != NULL) delete [] rows;
+        if( rows != NULL)
+        {
+            delete [] rows;
+        }
     }
+    rows = new SparseRow[size1];
     for (int i = 0; i < size1; i++)
     {
         rows[i] = D.rows[i];

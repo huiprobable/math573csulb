@@ -46,7 +46,7 @@ SparseRow::~SparseRow()
 
 void SparseRow::initialize(long m)
 {
-    size = 0;
+    size = m;
     nnz = 0;
     index = NULL;
     value = NULL;
