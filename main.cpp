@@ -3,8 +3,7 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "Relaxation.h"
-#include "Jacobi.h"
+#include "NumericalLinearAlgebra.h"
 using namespace std;
 
 template <typename T> int sgn(T val);
@@ -46,7 +45,7 @@ int main()
     
     // solve Ax = v using Jacobi method. After you implement Gauss Seidel class, you may change it to Gauss Seidel and see how does Gauss Seidel behave. 
     bool output_msg = 1;
-    Jacobi J(A,b);
+    SteepestDescent J(A,b);
     J.solve(m, 1e-8, output_msg);
     
     return 0;

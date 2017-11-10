@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
-#include "SparseRow.h"
+#include "LinearAlgebra.h"
 using namespace std;
 
 #ifdef  _DEBUG

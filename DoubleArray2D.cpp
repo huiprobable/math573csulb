@@ -1,4 +1,4 @@
-#include "DoubleArray2D.h"
+#include "LinearAlgebra.h"
 
 #ifdef  _DEBUG
 #include <stdio.h>

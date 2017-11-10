@@ -1,8 +1,6 @@
 #include <iostream>
 #include <iomanip>
-#include "DoubleArray1D.h"
-#include "SparseRow.h"
-#include "SparseMatrix.h"
+#include "LinearAlgebra.h"
 using namespace std;
 
 //
@@ -183,6 +181,25 @@ DoubleArray1D SparseMatrix::operator*(const DoubleArray1D& b) const
     for (int i = 0; i < size1; i++)
     {
         v(i) = rows[i].dot(b);
+    }
+    return v;
+}
+
+DoubleArray1D SparseMatrix::transMultiply(const DoubleArray1D& b) const
+{
+    DoubleArray1D v(size2);
+    double* value;
+    long* index;
+    long nnz;
+    for (int i = 0; i < size1; i++)
+    {
+        value = rows[i].getValue();
+        index = rows[i].getIndex();
+        nnz = rows[i].getNnz();
+        for (int j = 0; j < nnz; j++)
+        {
+            v(index[j]) += value[j]*b(i);
+        }
     }
     return v;
 }
