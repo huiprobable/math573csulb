@@ -55,7 +55,7 @@ public:
     void initialize(const SparseMatrix& A_cp, const DoubleArray1D& b_cp);
     virtual void update_VW(){};
     virtual void update_x();
-    int solve(int n, double eps, bool output_msg);
+    virtual int solve(int n, double eps, bool output_msg);
     
 protected:
     SparseMatrix A;
